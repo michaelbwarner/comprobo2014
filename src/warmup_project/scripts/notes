@@ -1,0 +1,5 @@
+roscore
+
+roslaunch neato_simulator neato_empty_world.launch
+
+rosrun warmup_project teleop.py

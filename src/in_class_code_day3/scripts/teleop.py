@@ -53,7 +53,7 @@ def getch():
 
 
 def teleop():
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('/cmd_vel_mux/input/teleop', Twist, queue_size=10)
     rospy.init_node('my_keyboard_teleop', anonymous=True)
     turn_vel = .4
     linear_vel = 1
