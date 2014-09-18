@@ -1,0 +1,13 @@
+digraph G {
+"odom" -> "base_footprint"[label="Broadcaster: /gazebo\nAverage rate: 100.201 Hz\nMost recent transform: 1351.510 \nBuffer length: 4.980 sec\n"];
+"base_link" -> "wheel_left_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 25.101 Hz\nMost recent transform: 1351.480 \nBuffer length: 4.940 sec\n"];
+"base_footprint" -> "base_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+"base_link" -> "wheel_right_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 25.101 Hz\nMost recent transform: 1351.480 \nBuffer length: 4.940 sec\n"];
+"base_link" -> "caster_back_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+"base_link" -> "caster_front_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+"base_link" -> "cliff_sensor_front_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+"base_link" -> "cliff_sensor_left_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+"base_link" -> "cliff_sensor_right_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+"base_link" -> "gyro_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+"base_link" -> "laser_joint"[label="Broadcaster: /robot_state_publisher\nAverage rate: 30.242 Hz\nMost recent transform: 1352.010 \nBuffer length: 4.960 sec\n"];
+}

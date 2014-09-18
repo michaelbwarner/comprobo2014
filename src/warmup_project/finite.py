@@ -42,6 +42,8 @@ def scan_received(msg, pub):
 		back_dist = get_avg_range(msg, 180)
 		
 	else:
+		global y_total
+		global x_total
 		y_total = 0
         	x_total = 0
         	for i in range(360):
