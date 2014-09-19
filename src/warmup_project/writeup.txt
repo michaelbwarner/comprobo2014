@@ -1,0 +1,19 @@
+Warmup project:
+
+I implemented the wall following and obstacle avoidance behaviors. 
+
+My strategy for the wall following was to take measurements in two directions, the front and the starboard side of the robot. I did this by reading the five surrounding LIDAR degrees and averaging the distances to minimize noise. I had two proportional controls from the front and side. The front had a stronger coefficient so that when it encountered a corner, the robot was able to turn away from the incoming wall and continue to wall follow against the new angle.
+
+For the obstacle avoidance behavior, I followed the suggestion on the website by treating each LIDAR reading as a force vector and using the sum to dictate the direction of motion. I gave it a set forward velocity as its intended path, not an absolute path using odom. The x vector components sum and are multiplied by a coefficient to get the angular velocity and the y vector similarly control the linear velocity.
+
+For the finite state controller, I combined the previously mentioned wall following and obstacle avoidance behaviors. The state that switched between behaviors was if there was an object close nearby directly behind the robot. So if the robot is wall following and something approaches from behind, it will switch to a mode that make it try to run away from the object. When it escapes the object, it will try to revert back to wall following.
+
+My code mostly followed the structure of the examples we were given, with a main function and a LaserScan call back function. This worked for the two independent behaviors, but the code became very cumbersome with the finite state controller. Because there was overlap in function and repetition of code, I broke the averaging and publishing code into separate functions.
+
+The main challenge I faced was getting used to ROS and the environment. To save time, I initally tried using the simulator but found that it too slow on my computer to be useful. I didn't utilize rviz until much later in the assignment, but I realized that visualizing the LIDAR data would have expediated ironing out bugs in my code. 
+
+I would try definitely revisit the obstacle following behavior. Right now, it does work, but very spastically. I think this may be due to noisy LIDAR data. I would like to implement a smoothing algorithm or something smarter that would help it move much smoother. Also, I would like to implement the obstacle avoidance with the odom data. This seems like a more relevant algorithm to pursue than the simpler one that I ended up doing.
+
+I learned that the LIDAR is surprisingly good for something so cheap. A lot of good data can be gleaned from that sensor.
+
+Mike Warner   
