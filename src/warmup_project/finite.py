@@ -47,9 +47,9 @@ def scan_received(msg, pub):
 		y_total = 0
         	x_total = 0
         	for i in range(360):
-                	if msg.ranges[i] > 0 and msg.ranges[i] < 8: #valid range
-                        	y_total = y_total + math.cos(i)*msg.ranges[i] # negative values go backward
-                       	 	x_total = x_total + math.sin(i)*msg.ranges[i] # negative values turns right
+                	if msg.ranges[i] > 0 and msg.ranges[i] < 2: #valid range
+                        	y_total = y_total + math.cos(i)*(2-msg.ranges[i]) # negative values go backward
+                       	 	x_total = x_total + math.sin(i)*(2-msg.ranges[i]) # negative values turns right
 
 def publish(msg, pub, linear, ang):
 

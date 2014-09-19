@@ -15,8 +15,8 @@ def scan_received(msg, pub):
 	x_total = 0
 	for i in range(360):
 		if msg.ranges[i] > 0 and msg.ranges[i] < 2: #valid range
-			y_total = y_total + math.cos(i)*msg.ranges[i] # negative values go backward
-			x_total = x_total + math.sin(i)*msg.ranges[i] # negative values turns right				
+			y_total = y_total + math.cos(i)*(2-msg.ranges[i]) # negative values go backward
+			x_total = x_total + math.sin(i)*(2-msg.ranges[i]) # negative values turns right				
 	
 def approach_wall():
 	pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
